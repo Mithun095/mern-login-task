@@ -78,7 +78,9 @@ Do you want me to add that?
 
 **SIGNUP PAGE**
 ![SIGNUP PAGE](output/signup.png)
+
 **LOGIN PAGE**
 ![LOGIN PAGE](output/login.png)
+
 **HOME PAGE**
 ![HOME PAGE](output/home.png)
