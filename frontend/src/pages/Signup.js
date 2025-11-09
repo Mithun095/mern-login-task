@@ -24,28 +24,77 @@ export default function Signup() {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "100px" }}>
-      <h2>Signup Page</h2>
-      <form onSubmit={handleSignup}>
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "linear-gradient(135deg, #fce4ec, #f8bbd0)",
+        fontFamily: "Poppins, sans-serif",
+      }}
+    >
+      <form
+        onSubmit={handleSignup}
+        style={{
+          background: "white",
+          padding: "40px 60px",
+          borderRadius: "15px",
+          boxShadow: "0px 6px 20px rgba(0,0,0,0.1)",
+          textAlign: "center",
+        }}
+      >
+        <h2 style={{ color: "#ad1457", marginBottom: "25px" }}>Signup</h2>
         <input
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-        /><br/><br/>
+          style={inputStyle}
+        />
         <input
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        /><br/><br/>
+          style={inputStyle}
+        />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        /><br/><br/>
-        <button type="submit">Signup</button>
+          style={inputStyle}
+        />
+        <button type="submit" style={buttonStyle}>
+          Signup
+        </button>
+        <p style={{ marginTop: "15px" }}>
+          <a href="/" style={{ color: "#ad1457", textDecoration: "none" }}>
+            Already have an account? Login
+          </a>
+        </p>
       </form>
-      <p><a href="/">Already have an account? Login</a></p>
     </div>
   );
 }
+
+const inputStyle = {
+  display: "block",
+  width: "250px",
+  margin: "10px auto",
+  padding: "10px",
+  borderRadius: "8px",
+  border: "1px solid #ccc",
+  fontSize: "15px",
+};
+
+const buttonStyle = {
+  marginTop: "15px",
+  padding: "10px 25px",
+  fontSize: "16px",
+  backgroundColor: "#ad1457",
+  color: "white",
+  border: "none",
+  borderRadius: "8px",
+  cursor: "pointer",
+  transition: "0.3s",
+};

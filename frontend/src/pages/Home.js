@@ -47,30 +47,62 @@ export default function Home() {
   }, [navigate]);
 
   if (loading) {
-    return <p style={{ textAlign: "center", marginTop: "150px" }}>Loading...</p>;
+    return (
+      <p style={{ textAlign: "center", marginTop: "150px", fontSize: "18px" }}>
+        Loading...
+      </p>
+    );
   }
 
   return (
-    <div style={{ textAlign: "center", marginTop: "150px" }}>
-      <h1>This is Home Page</h1>
-      {user ? (
-        <>
-          <p>Welcome, <b>{user.name || user.email}</b>!</p>
-          <button
-            onClick={handleLogout}
-            style={{
-              marginTop: "20px",
-              padding: "10px 20px",
-              fontSize: "16px",
-              cursor: "pointer",
-            }}
-          >
-            Logout
-          </button>
-        </>
-      ) : (
-        <p>You are not logged in.</p>
-      )}
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "linear-gradient(135deg, #e3f2fd, #bbdefb)",
+        fontFamily: "Poppins, sans-serif",
+      }}
+    >
+      <div
+        style={{
+          background: "white",
+          padding: "40px 60px",
+          borderRadius: "15px",
+          boxShadow: "0px 6px 20px rgba(0,0,0,0.1)",
+          textAlign: "center",
+        }}
+      >
+        <h1 style={{ color: "#1976d2" }}>Home Page</h1>
+        {user ? (
+          <>
+            <p style={{ fontSize: "18px", marginBottom: "30px" }}>
+              Welcome, <b>{user.name || user.email}</b> 🎉
+            </p>
+            <button
+              onClick={handleLogout}
+              style={{
+                padding: "10px 25px",
+                fontSize: "16px",
+                backgroundColor: "#1976d2",
+                color: "white",
+                border: "none",
+                borderRadius: "8px",
+                cursor: "pointer",
+                transition: "0.3s",
+              }}
+              onMouseOver={(e) => (e.target.style.backgroundColor = "#1565c0")}
+              onMouseOut={(e) => (e.target.style.backgroundColor = "#1976d2")}
+            >
+              Logout
+            </button>
+          </>
+        ) : (
+          <p>You are not logged in.</p>
+        )}
+      </div>
     </div>
   );
 }

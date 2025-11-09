@@ -23,7 +23,7 @@ app.post('/signup', async (req, res) => {
       return res.status(400).json({ err: 'User already exists' });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10); // hash password
+    const hashedPassword = await bcrypt.hash(password, 10); 
     const newUser = new User({ name, email, password: hashedPassword });
     await newUser.save();
 
@@ -85,4 +85,4 @@ app.get('/home', authenticateToken, (req, res) => {
   res.json({ message: 'Welcome to Home Page', user: req.user });
 });
 
-app.listen(5000, () => console.log('🚀 Server running on port 5000'));
+app.listen(5000, () => console.log(' Server running on port 5000'));

@@ -20,10 +20,7 @@ export default function Login() {
 
       if (res.ok && data.message === "Login successful") {
         alert("Login successful!");
-
-        // ✅ Store token in localStorage
         localStorage.setItem("token", data.token);
-
         navigate("/home");
       } else {
         alert(data.err || "Invalid credentials");
@@ -35,23 +32,71 @@ export default function Login() {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "100px" }}>
-      <h2>Login Page</h2>
-      <form onSubmit={handleLogin}>
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "linear-gradient(135deg, #e8f5e9, #c8e6c9)",
+        fontFamily: "Poppins, sans-serif",
+      }}
+    >
+      <form
+        onSubmit={handleLogin}
+        style={{
+          background: "white",
+          padding: "40px 60px",
+          borderRadius: "15px",
+          boxShadow: "0px 6px 20px rgba(0,0,0,0.1)",
+          textAlign: "center",
+        }}
+      >
+        <h2 style={{ color: "#2e7d32", marginBottom: "25px" }}>Login</h2>
         <input
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        /><br/><br/>
+          style={inputStyle}
+        />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        /><br/><br/>
-        <button type="submit">Login</button>
+          style={inputStyle}
+        />
+        <button type="submit" style={buttonStyle}>
+          Login
+        </button>
+        <p style={{ marginTop: "15px" }}>
+          <a href="/signup" style={{ color: "#2e7d32", textDecoration: "none" }}>
+            Don’t have an account? Signup
+          </a>
+        </p>
       </form>
-      <p><a href="/signup">Don't have an account? Signup</a></p>
     </div>
   );
 }
+
+const inputStyle = {
+  display: "block",
+  width: "250px",
+  margin: "10px auto",
+  padding: "10px",
+  borderRadius: "8px",
+  border: "1px solid #ccc",
+  fontSize: "15px",
+};
+
+const buttonStyle = {
+  marginTop: "15px",
+  padding: "10px 25px",
+  fontSize: "16px",
+  backgroundColor: "#2e7d32",
+  color: "white",
+  border: "none",
+  borderRadius: "8px",
+  cursor: "pointer",
+  transition: "0.3s",
+};
