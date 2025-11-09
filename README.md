@@ -74,3 +74,11 @@ If you want, I can also add a **table of API endpoints** in the README (`/signup
 Do you want me to add that?
 ```
 
+## OUTPUTS
+
+**SIGNUP PAGE**
+![SIGNUP PAGE](output/signup.png)
+**LOGIN PAGE**
+![LOGIN PAGE](output/login.png)
+**HOME PAGE**
+![HOME PAGE](output/home.png)
