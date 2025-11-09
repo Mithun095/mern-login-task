@@ -21,8 +21,8 @@ export default function Login() {
       if (res.ok && data.message === "Login successful") {
         alert("Login successful!");
 
-        // store user details in localStorage
-        localStorage.setItem("user", JSON.stringify(data.user));
+        // ✅ Store token in localStorage
+        localStorage.setItem("token", data.token);
 
         navigate("/home");
       } else {
